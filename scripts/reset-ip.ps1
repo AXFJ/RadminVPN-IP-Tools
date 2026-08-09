@@ -12,8 +12,7 @@ $psexec = if (Get-Command psexec.exe -ErrorAction SilentlyContinue) {
 } elseif (Test-Path "$scriptDir\PsExec.exe") {
     "$scriptDir\PsExec.exe"
 } else {
-    Write-Host "ERROR: Psexec not found!"
-    Write-Host "            download at https://learn.microsoft.com/sysinternals/downloads/psexec"
+    Write-Host "ERROR: Psexec not found. Please run download-psexec.bat."
     Read-Host "Press Enter to exit..."
     exit 1
 }
