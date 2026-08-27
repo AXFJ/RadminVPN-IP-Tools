@@ -1,7 +1,7 @@
 > [!IMPORTANT]
-> ** PLEASE DOWNLOAD [PsExec](https://learn.microsoft.com/sysinternals/downloads/psexec) AND PUT IT INTO `script` FOLDER FIRST! ** 
+> **PLEASE DOWNLOAD [PsExec](https://learn.microsoft.com/sysinternals/downloads/psexec) AND PUT IT INTO `script` FOLDER FIRST!** 
 >  
-> ** 请先下载微软 [PsExec](https://learn.microsoft.com/sysinternals/downloads/psexec) 并将它放到 `scripts` 文件夹下！ ** 
+> **请先下载微软 [PsExec](https://learn.microsoft.com/sysinternals/downloads/psexec) 并将它放到 `scripts` 文件夹下！** 
 
 ### Language EN-US
 # Radmin VPN IP Tools by AXFJ
