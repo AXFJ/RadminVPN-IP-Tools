@@ -1,3 +1,18 @@
+#   This Source Code Form is subject to the terms of the Mozilla Public
+#   License, v. 2.0. If a copy of the MPL was not distributed with this
+#   file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+<#
+.SYNOPSIS
+    Resets IP via PsExec with SYSTEM privileges.
+.DESCRIPTION
+    This script performs the following operations with SYSTEM-level privileges (via PsExec):
+      1. Terminates the process RvControlSvc.exe (Radmin VPN service).
+      2. Deletes the registry key HKLM\SOFTWARE\WOW6432Node\Famatech\RadminVPN\1.0.
+      3. Terminates the process RvRvpnGui.exe (Radmin VPN GUI).
+    The script must be run as Administrator and requires PsExec.exe to be available.
+#>
+
 # Check permission
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Write-Host "Please run this script as an administrator."
@@ -17,8 +32,7 @@ $psexec = if (Get-Command psexec.exe -ErrorAction SilentlyContinue) {
     exit 1
 }
 
-Write-Host "WARNING: Please be sure you've backuped everything!"
-Write-Host "                  To backup, run backup-ip.bat."
+Write-Host "WARNING: Please be sure you've backuped everything! To backup, run backup-ip.bat."
 Read-Host "Press Enter to continue..."
 
 # 1. Kill RvControlSvc
